@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <title>Login page</title>
+</head>
+<body>
+    <div class="shadow container1">
+        <form class="form-check p-0" method="post">
+            {% csrf_token %}
+            {% if messages %}
+                <div class="alert alert-warning alert-dismissible fade show messg" role="alert">
+                    {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                <h1 class="text-center">LOGIN</h1>
+                <hr>
+                <div class="input-group-text p-1 inputtxt">
+                    <span>Username</span>
+                    <input type="text"  class="p-1 text-decoration-none" name="username" >
+                </div>
+                <div class="input-group-text p-1 inputtxt">
+                    <span>Password</span>
+                    <input type="password" name="password">
+                </div>
+                <div class="text-secondary p-3">
+                    <p>Don't have an account ? <a href="/register/">Register here</a></p>
+                </div>
+                <button class="btn btn-group shadow bg-white buttonn">LOGIN</button>
+
+            </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>
