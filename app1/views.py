@@ -40,7 +40,7 @@ def register(request):
     return render(request, 'register.html')
 
 
-def page1(request):
+def page1(request):  # sourcery skip: use-named-expression
 
     if request.method == "POST":
         username = request.POST['username']
