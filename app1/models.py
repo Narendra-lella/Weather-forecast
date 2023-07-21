@@ -12,7 +12,5 @@ class WeatherData(models.Model):
     location = models.CharField(max_length=100)
     datetime=models.DateTimeField(auto_now_add=True)
 
-    def __str__(self) -> str:
-        return self.description
 
 

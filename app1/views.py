@@ -4,10 +4,9 @@ from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate,login
 from django.contrib import messages
 import requests
-from zmq import NULL
 from .models import  WeatherData
 from django.contrib.auth.models import User
-import uuid #for creating unique tokens
+import uuid          #for creating unique tokens
 from .emails import send_emails
 # Create your views here.
 
@@ -38,8 +37,6 @@ def register(request):
             send_emails(email, token)
             messages.success(request, 'A conformation mail is sent. Login through mail')
             return redirect('/')
-        #messages.success(request, 'Account is created successfully. please login')
-        #return redirect('/')
     return render(request, 'register.html')
 
 
