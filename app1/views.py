@@ -59,8 +59,7 @@ def page1(request):
 
 def mainpage(request):  # sourcery skip: extract-method, remove-unnecessary-else
     city = request.GET.get('city')
-    #api = '895098b5d8379f2490a2922a5ca07143'
-    url = f'https://api.openweathermap.org/data/2.5/weather?q={city}&appid=895098b5d8379f2490a2922a5ca07143'
+    url = f'https://api.openweathermap.org/data/2.5/weather?q={city}&appid="your api id "'
     data = requests.get(url).json()
     if data.get('cod') == 200:
         weather_data = WeatherData(
