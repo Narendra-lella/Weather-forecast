@@ -14,8 +14,8 @@ Tech Stack
 --
 The Weather App is built using the following technologies:
 
-* Python 3.8
-* Django 3.2: Python web framework
+* Python 3.10.8
+* Django 4.1.3: Python web framework
 * Django REST framework: For API views
 * MySQL: Database to store weather data
 * HTML, CSS: Frontend user interface
